@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0b">
+<title>Integrity Ministries | Music Hub</title>
+<meta name="description" content="Integrity Ministries Music Hub — songs, worship messages and a place to grow in faith.">
+<style>
+:root{--bg:#0b0812;--panel:#171121;--panel2:#21182e;--line:#40304f;--gold:#f0c980;--purple:#b99ae8;--text:#faf7f1;--muted:#c2b6ce;--green:#8bd5ad;--danger:#ff8d9b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#402452 0,transparent 36%),var(--bg);color:var(--text);font:15px/1.55 Inter,system-ui,Arial,sans-serif;min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}a{color:inherit}.wrap{width:min(1440px,calc(100% - 36px));margin:auto}.top{position:sticky;top:0;z-index:20;background:#0d0916eF;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.bar{display:flex;align-items:center;gap:20px;min-height:76px}.brand{display:flex;gap:12px;align-items:center;text-decoration:none;font-weight:850;letter-spacing:.1em;font-size:13px}.mark{width:42px;height:42px;border:1px solid var(--gold);border-radius:14px;display:grid;place-items:center;color:var(--gold);font-size:24px;box-shadow:0 0 25px #f0c98022}.nav{display:flex;gap:5px;margin:auto}.nav button,.ghost{border:0;background:transparent;color:var(--muted);padding:10px 12px;border-radius:10px}.nav button:hover,.nav button.active,.ghost:hover{background:#342542;color:var(--gold)}.actions{display:flex;gap:8px;align-items:center}.btn{border:1px solid var(--line);border-radius:11px;background:var(--panel2);color:var(--text);padding:10px 15px}.btn.primary{background:var(--gold);color:#211629;border-color:var(--gold);font-weight:800}.btn:hover{border-color:var(--gold);transform:translateY(-1px)}.search{background:var(--panel);border:1px solid var(--line);border-radius:11px;color:var(--text);padding:11px 13px;width:190px}.hero{margin:30px 0;padding:clamp(28px,5vw,58px);min-height:350px;border:1px solid #604775;border-radius:26px;background:radial-gradient(circle at 80% 30%,#9a67b94d,transparent 35%),linear-gradient(120deg,#392148,#15101f 72%);display:flex;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;box-shadow:0 28px 80px #0006}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);font-weight:800}.hero h1{font-size:clamp(36px,6vw,66px);line-height:1.02;letter-spacing:-.05em;max-width:700px;margin:14px 0}.hero p{color:#ddd1e5;max-width:570px}.hero-art{width:210px;aspect-ratio:1;border-radius:30px;display:grid;place-items:center;font-size:100px;color:var(--gold);background:linear-gradient(145deg,#a77b55,#50336e 48%,#1a1025);border:1px solid #eac77c99;box-shadow:0 25px 70px #0009;transform:rotate(7deg);flex:none}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:38px 0 16px}.section-head h2{font-size:27px;margin:0}.muted{color:var(--muted)}.small{font-size:12px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card,.panel{background:linear-gradient(145deg,#1c1528,#15101e);border:1px solid var(--line);border-radius:17px;padding:14px;box-shadow:0 14px 35px #0003}.card{transition:.25s}.card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 22px 45px #0006}.cover{aspect-ratio:1;border-radius:12px;background:linear-gradient(145deg,#74519a,#21172e 72%,#b58b57);display:grid;place-items:center;font-size:55px;color:#f7d99c;overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover}.card h3{font-size:16px;margin:12px 0 3px}.card p{margin:0 0 12px;color:var(--muted);font-size:13px}.card .row{gap:6px}.card .btn{padding:7px 10px;font-size:12px}.view{display:none;padding-bottom:50px}.view.active{display:block;animation:rise .35s ease}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.field{display:flex;flex-direction:column;gap:6px;font-size:13px;color:#e8deee}.field input,.field textarea,.field select,.filters input,.filters select{background:#100c18;color:var(--text);border:1px solid #574368;border-radius:10px;padding:11px 12px;width:100%;min-width:0}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus,.search:focus{outline:2px solid #d7b36e;outline-offset:2px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.wide{grid-column:1/-1}.auth-card{max-width:510px;margin:50px auto;padding:28px}.auth-card h2{margin:4px 0 8px}.notice{padding:13px 15px;border:1px solid #765a8a;background:#2a2037;border-radius:12px;color:#e8dff0;margin:12px 0}.error{color:var(--danger)}.success{color:var(--green)}.hidden{display:none!important}.admin-layout{display:grid;grid-template-columns:205px minmax(0,1fr);gap:20px}.side{display:flex;flex-direction:column;gap:6px;align-self:start;position:sticky;top:95px}.side button{text-align:left}.side button.active{color:var(--gold);background:#342542}.admin-pane{display:none}.admin-pane.active{display:block}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:18px;background:#261c34;border:1px solid var(--line);border-radius:14px}.stat strong{display:block;color:var(--gold);font-size:28px}.list{display:grid;gap:9px;margin-top:16px}.listrow{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:12px;background:#1c1528}.player{position:fixed;bottom:0;left:0;right:0;z-index:30;background:#171121f5;border-top:1px solid #765b8a;backdrop-filter:blur(16px);padding:10px 20px}.player-inner{width:min(1400px,100%);margin:auto;display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:18px;align-items:center}.now{display:flex;align-items:center;gap:10px;min-width:0}.mini{width:46px;height:46px;border-radius:9px;background:linear-gradient(145deg,#76519c,#c49b5b);display:grid;place-items:center;flex:none}.now strong,.now span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.now span{font-size:12px;color:var(--muted)}.transport{text-align:center}.transport button{border:0;background:none;color:var(--text);padding:6px 11px}.transport .play{background:var(--gold);color:#201629;border-radius:50%;width:36px;height:36px}.timeline{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted)}input[type=range]{accent-color:var(--gold);width:100%}.volume{display:flex;justify-content:flex-end;align-items:center;gap:8px}.toast{position:fixed;right:18px;top:92px;z-index:90;background:#30223d;border:1px solid var(--gold);padding:12px 16px;border-radius:12px;box-shadow:0 15px 35px #0008}.lyrics{white-space:pre-wrap;line-height:1.9;font-size:18px;color:#e6d9ef}.footer{padding:35px 0 150px;color:var(--muted);font-size:12px}.hamb{display:none}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.search{display:none}.nav button{padding:9px 7px;font-size:13px}}
+@media(max-width:720px){.wrap{width:calc(100% - 26px)}.bar{min-height:66px}.hamb{display:block}.nav{display:none;position:absolute;top:66px;left:0;right:0;background:#15101f;padding:12px;flex-direction:column;border-bottom:1px solid var(--line)}.nav.open{display:flex}.hero{min-height:280px}.hero-art{width:120px;font-size:58px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-layout{display:block}.side{position:static;flex-direction:row;overflow:auto;margin-bottom:16px}.side button{white-space:nowrap}.player-inner{grid-template-columns:1fr auto;gap:4px}.transport{grid-column:1/-1;grid-row:2}.volume{grid-column:2;grid-row:1}.volume input{display:none}.stats{grid-template-columns:repeat(2,1fr)}body{padding-bottom:135px}}
+@media(max-width:460px){.hero-art{display:none}.hero h1{font-size:39px}.grid{gap:10px}.card{padding:9px}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}.listrow{align-items:flex-start;flex-direction:column}.brand{font-size:11px}.actions .secondary{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* ===== PREMIUM MOTION LAYER ===== */
+:root{
+  --gold-bright:#ffe3a0;
+  --violet-glow:#9c72e8;
+  --glass:rgba(25,17,38,.72);
+}
+html{background:#080610}
+body{
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 14% 8%,rgba(116,70,160,.28),transparent 34%),
+    radial-gradient(ellipse at 88% 26%,rgba(46,91,116,.17),transparent 30%),
+    linear-gradient(145deg,#090711 0%,#100a1b 48%,#090711 100%);
+}
+body::before{
+  content:"";position:fixed;inset:-30%;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(153,102,211,.20),transparent 22%),
+    radial-gradient(circle at 76% 34%,rgba(223,177,105,.12),transparent 19%),
+    radial-gradient(circle at 54% 82%,rgba(75,117,154,.13),transparent 24%);
+  filter:blur(34px);animation:ambientDrift 24s ease-in-out infinite alternate;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.28;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%,#fff 98%,transparent),
+    radial-gradient(1px 1px at 77% 13%,#f5dba7 98%,transparent),
+    radial-gradient(1px 1px at 41% 64%,#fff 98%,transparent),
+    radial-gradient(1px 1px at 89% 77%,#d9c4ff 98%,transparent),
+    radial-gradient(1px 1px at 23% 88%,#fff 98%,transparent),
+    radial-gradient(1px 1px at 63% 42%,#fff 98%,transparent);
+  background-size:380px 310px;animation:starFloat 65s linear infinite;
+}
+@keyframes ambientDrift{0%{transform:translate3d(-2%,0,0) scale(1)}100%{transform:translate3d(2%,3%,0) scale(1.08)}}
+@keyframes starFloat{from{background-position:0 0}to{background-position:380px 310px}}
+.top{background:rgba(10,7,17,.78);border-bottom-color:rgba(203,169,230,.18);box-shadow:0 8px 30px rgba(0,0,0,.16)}
+.mark{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(240,201,128,.12),rgba(160,117,210,.12));box-shadow:0 0 25px rgba(240,201,128,.13),inset 0 0 18px rgba(240,201,128,.08)}
+.mark::after{content:"";position:absolute;inset:-70%;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);transform:translateX(-65%) rotate(15deg);animation:logoShine 6s ease-in-out infinite}
+@keyframes logoShine{0%,65%{transform:translateX(-65%) rotate(15deg)}100%{transform:translateX(65%) rotate(15deg)}}
+.hero{
+  position:relative;isolation:isolate;
+  background:
+    radial-gradient(ellipse at 78% 48%,rgba(177,129,231,.23),transparent 38%),
+    radial-gradient(ellipse at 20% 110%,rgba(230,186,111,.13),transparent 45%),
+    linear-gradient(118deg,rgba(58,34,78,.94),rgba(18,13,29,.96) 72%);
+  border-color:rgba(222,190,247,.30);
+  box-shadow:0 30px 90px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.07);
+}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+.hero::before{width:370px;height:370px;right:8%;top:-42%;border:1px solid rgba(242,207,146,.20);box-shadow:0 0 0 28px rgba(242,207,146,.025),0 0 0 58px rgba(242,207,146,.02);animation:orbit 22s linear infinite}
+.hero::after{width:190px;height:190px;right:18%;bottom:-48%;background:rgba(151,107,205,.12);filter:blur(24px);animation:pulseGlow 7s ease-in-out infinite}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes pulseGlow{0%,100%{transform:scale(.88);opacity:.45}50%{transform:scale(1.18);opacity:.9}}
+.hero-art{
+  position:relative;isolation:isolate;
+  background:radial-gradient(circle at 35% 25%,#e8c98f,#9b70c1 34%,#38234d 68%,#160f23);
+  border-radius:36px;transform:rotate(5deg);
+  box-shadow:0 24px 70px rgba(0,0,0,.5),0 0 65px rgba(182,139,224,.18),inset 0 1px 1px rgba(255,255,255,.35);
+  animation:artFloat 7s ease-in-out infinite;
+}
+.hero-art::before{content:"";position:absolute;inset:-13px;border:1px solid rgba(244,211,157,.35);border-radius:42px;transform:rotate(-8deg);animation:orbit 28s linear infinite}
+.hero-art::after{content:"";position:absolute;inset:13%;border:1px solid rgba(255,255,255,.16);border-radius:50%;box-shadow:0 0 35px rgba(255,226,173,.18)}
+@keyframes artFloat{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -12px;rotate:2deg}}\n.hero-note{position:relative;z-index:2;text-shadow:0 5px 25px rgba(255,226,173,.38)}.hero-wave{position:absolute;z-index:2;bottom:23px;display:flex;align-items:center;gap:4px;height:30px}.hero-wave i{display:block;width:4px;height:9px;border-radius:5px;background:#ffe5aa;opacity:.8;animation:waveBars 1.1s ease-in-out infinite alternate}.hero-wave i:nth-child(2n){animation-delay:.2s}.hero-wave i:nth-child(3n){animation-delay:.4s}.hero-wave i:nth-child(4n){animation-delay:.6s}@keyframes waveBars{to{height:28px;opacity:1}}
+.card,.panel{background:linear-gradient(145deg,rgba(34,24,48,.88),rgba(17,13,27,.88));backdrop-filter:blur(14px);border-color:rgba(194,157,220,.19);box-shadow:0 16px 42px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.035)}
+.card:hover{border-color:rgba(242,207,146,.7);box-shadow:0 24px 55px rgba(0,0,0,.4),0 0 26px rgba(171,130,215,.09)}
+.cover{position:relative}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(255,255,255,.16),transparent 42%,rgba(0,0,0,.16));pointer-events:none}
+.btn{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.btn.primary{box-shadow:0 8px 25px rgba(240,201,128,.18)}
+.btn.primary:hover{box-shadow:0 12px 32px rgba(240,201,128,.28);transform:translateY(-2px)}
+.view.active{animation:pageEnter .42s cubic-bezier(.2,.75,.25,1)}
+@keyframes pageEnter{from{opacity:0;transform:translateY(14px);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
+.auth-card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(37,25,52,.94),rgba(15,11,24,.94));border-color:rgba(240,201,128,.3);box-shadow:0 28px 90px rgba(0,0,0,.45),0 0 55px rgba(151,106,198,.10)}
+.auth-card::before{content:"✦";position:absolute;right:24px;top:14px;color:rgba(240,201,128,.13);font-size:110px;line-height:1;pointer-events:none}
+.field input,.field textarea,.field select,.filters input,.filters select,.search{background:rgba(9,7,15,.72);border-color:rgba(190,154,219,.3)}
+.player{background:rgba(18,12,27,.91);border-top-color:rgba(226,190,128,.38);box-shadow:0 -12px 42px rgba(0,0,0,.3)}
+.player .play{box-shadow:0 0 20px rgba(240,201,128,.24)}
+.toast{backdrop-filter:blur(16px);box-shadow:0 16px 42px rgba(0,0,0,.4)}
+.eyebrow{color:var(--gold-bright)}
+@media(max-width:720px){.hero::before{right:-20%;top:-24%;width:260px;height:260px}.hero-art{animation-duration:8s}}
+@media(prefers-reduced-motion:reduce){
+ body::before,body::after,.hero-art,.hero-art::before,.hero::before,.hero::after,.mark::after{animation:none!important}
+}
+
+
+/* ===== STREAMING APP REDESIGN: SPOTIFY-INSPIRED, ORIGINAL BRANDING ===== */
+:root{
+ --bg:#080a0b;--panel:#121615;--panel2:#202724;--line:#29332e;
+ --gold:#1ed760;--gold-bright:#b8ffd0;--purple:#b5f5c9;
+ --text:#f6f8f6;--muted:#a7b1aa;--green:#1ed760;
+}
+html{background:#080a0b}
+body{
+ background:
+  radial-gradient(ellipse at 76% 0%,rgba(30,215,96,.10),transparent 32%),
+  linear-gradient(180deg,#101513 0%,#090b0a 42%,#080a0b 100%);
+ color:#f6f8f6;
+}
+body::before{
+ background:
+  radial-gradient(circle at 18% 22%,rgba(30,215,96,.13),transparent 22%),
+  radial-gradient(circle at 76% 34%,rgba(94,155,115,.11),transparent 19%),
+  radial-gradient(circle at 54% 82%,rgba(28,110,72,.10),transparent 24%);
+ filter:blur(44px);opacity:.8;
+}
+body::after{opacity:.13}
+.top{
+ position:sticky;top:0;z-index:25;
+ background:rgba(8,10,9,.94);
+ border-bottom:1px solid #202824;
+ box-shadow:0 8px 26px rgba(0,0,0,.28);
+}
+.bar{width:100%;max-width:none;padding:0 28px;min-height:74px;gap:22px}
+.brand{letter-spacing:.07em;font-size:12px;min-width:225px}
+.mark{
+ width:40px;height:40px;border:0;border-radius:50%;
+ background:#1ed760;color:#07140b;font-size:23px;
+ box-shadow:0 0 26px rgba(30,215,96,.22)
+}
+.mark::after{display:none}
+.nav{
+ position:fixed;z-index:22;left:18px;top:88px;bottom:112px;
+ width:218px;margin:0;padding:16px 12px;
+ display:flex;flex-direction:column;align-items:stretch;gap:7px;
+ background:linear-gradient(180deg,#111715,#0d110f);
+ border:1px solid #202923;border-radius:16px;
+ box-shadow:0 18px 48px rgba(0,0,0,.32);
+}
+.nav button{
+ text-align:left;display:flex;align-items:center;gap:13px;
+ padding:13px 14px;border-radius:9px;font-size:14px;font-weight:700;
+ color:#aab5ad;background:transparent;transition:.18s ease;
+}
+.nav button::before{font-size:18px;width:22px;text-align:center;opacity:.9}
+.nav button[data-view="home"]::before{content:"⌂"}
+.nav button[data-view="library"]::before{content:"▤"}
+.nav button[data-view="messages"]::before{content:"◉"}
+.nav button[data-view="collection"]::before{content:"♡"}
+.nav button[data-view="admin"]::before{content:"⚙"}
+.nav button:hover,.nav button.active{
+ background:#202a24;color:#fff;
+}
+.nav button.active{box-shadow:inset 3px 0 #1ed760}
+.actions{margin-left:auto}
+.search{
+ width:min(330px,30vw);border:0;border-radius:999px;
+ background:#202824;padding:12px 18px;color:white;
+}
+.search:focus{outline:2px solid #1ed760}
+.btn{
+ border:0;border-radius:999px;background:#242c27;color:#f7fff9;
+ padding:11px 18px;font-weight:750;
+}
+.btn.primary{
+ background:#1ed760;color:#07140b;border-color:#1ed760;
+ box-shadow:none;
+}
+.btn.primary:hover{background:#52e782;transform:scale(1.03)}
+.btn:hover{background:#303b34;border-color:transparent;transform:scale(1.02)}
+.ghost{border-radius:999px}
+main.wrap{
+ width:auto;max-width:1500px;margin:0 34px 0 260px;
+ padding:22px 24px 0;
+}
+.view{padding-bottom:50px}
+.hero{
+ margin:0 0 32px;min-height:300px;padding:clamp(28px,4vw,52px);
+ border:0;border-radius:14px;
+ background:
+  linear-gradient(100deg,rgba(8,24,14,.97) 0%,rgba(12,46,26,.93) 48%,rgba(16,35,24,.72) 100%),
+  radial-gradient(circle at 82% 20%,#1ed76066,transparent 40%);
+ box-shadow:none;
+}
+.hero h1{font-size:clamp(38px,5vw,64px);max-width:700px;letter-spacing:-.055em}
+.hero p{color:#d1ded5;font-size:15px}
+.eyebrow{color:#1ed760;letter-spacing:.16em}
+.hero-art{
+ width:220px;border:0;border-radius:50%;
+ background:radial-gradient(circle at 35% 25%,#c9ffda,#35d879 30%,#087b3b 65%,#07351d);
+ color:#05200f;box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 70px rgba(30,215,96,.18);
+}
+.hero-art::before{border-color:rgba(30,215,96,.42)}
+.hero-art::after{border-color:rgba(255,255,255,.22)}
+.hero-wave i{background:#07391b}
+.section-head{margin:34px 0 16px}
+.section-head h2{font-size:23px;letter-spacing:-.025em}
+.section-head .ghost{color:#b7c1ba;font-weight:750}
+.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.card,.panel{
+ background:#151b17;border:1px solid transparent;border-radius:10px;
+ padding:14px;box-shadow:none;
+}
+.card{transition:background .2s ease,transform .2s ease}
+.card:hover{
+ transform:translateY(-3px);background:#202a23;
+ border-color:#344238;box-shadow:0 12px 28px rgba(0,0,0,.24)
+}
+.cover{
+ border-radius:7px;background:linear-gradient(145deg,#2d6845,#12251a 65%,#6cb888);
+ box-shadow:0 8px 20px rgba(0,0,0,.25)
+}
+.card h3{font-size:14px;margin:13px 0 4px}
+.card p{font-size:12px;color:#aab5ad}
+.card .btn{font-size:11px;padding:8px 12px}
+.card .btn.primary{background:#1ed760;color:#07140b}
+.filters{background:#121815;padding:12px;border-radius:10px}
+.filters input,.filters select,.field input,.field textarea,.field select{
+ background:#202824;border:1px solid #344039;color:#f6f8f6;border-radius:8px;
+}
+.filters input:focus,.filters select:focus,.field input:focus,.field textarea:focus,.field select:focus{
+ outline:2px solid #1ed760;outline-offset:1px
+}
+.panel{background:#151b17;border-color:#2a352e}
+.auth-card{background:#151b17;border:1px solid #2b3930;box-shadow:0 25px 70px #0008}
+.auth-card::before{color:rgba(30,215,96,.08)}
+.notice{background:#19251d;border-color:#31523a;color:#d9f5e1}
+.admin-layout{gap:16px}
+.side{background:#111713;padding:10px;border:1px solid #27342c;border-radius:12px}
+.side button{border-radius:8px}
+.side button.active{background:#21352a;color:#1ed760}
+.stat{background:#1b241e;border-color:#2b3a30;border-radius:10px}
+.stat strong{color:#1ed760}
+.listrow{background:#19211c;border-color:#2b3930}
+.player{
+ background:rgba(16,21,18,.97);border-top:1px solid #344239;
+ box-shadow:0 -8px 30px rgba(0,0,0,.36);padding:10px 24px;
+}
+.player-inner{max-width:none;grid-template-columns:minmax(180px,1fr) minmax(300px,1.5fr) minmax(120px,1fr)}
+.mini{border-radius:5px;background:linear-gradient(145deg,#1ed760,#075b2d);color:#06200f}
+.transport .play{background:#1ed760;color:#07140b}
+input[type=range]{accent-color:#1ed760}
+.toast{background:#1b2b20;border-color:#1ed760}
+.footer{padding-bottom:155px}
+@media(max-width:1200px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.brand{min-width:190px}}
+@media(max-width:900px){
+ .nav{width:190px;left:10px}
+ main.wrap{margin-left:215px;margin-right:10px;padding-left:14px;padding-right:14px}
+ .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .bar{padding:0 16px}.brand{min-width:175px}
+}
+@media(max-width:720px){
+ .top{position:sticky}.bar{min-height:66px;padding:0 13px}
+ .brand{min-width:0}.nav{
+  display:none;position:fixed;top:66px;left:10px;right:10px;bottom:auto;
+  width:auto;height:auto;padding:10px;flex-direction:column;
+  background:#111713;border:1px solid #2b3930;border-radius:12px;
+ }
+ .nav.open{display:flex}
+ .nav button{padding:11px 13px}
+ main.wrap{margin:0;width:auto;padding:16px 13px 0}
+ .search{display:none}
+ .hero{min-height:260px;margin-bottom:24px;border-radius:12px}
+ .hero-art{width:125px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .player{padding:9px 12px}
+ .player-inner{grid-template-columns:1fr auto;gap:4px}
+ .transport{grid-column:1/-1;grid-row:2}
+ .volume{grid-column:2;grid-row:1}
+}
+@media(max-width:460px){
+ .hero-art{display:none}.hero h1{font-size:38px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .actions .secondary{display:inline-flex}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art,.hero-art::before,.hero::before,.hero::after,.mark::after{animation:none!important}
+}
+
+
+/* AUTH PAGE — clean, responsive Supabase sign-in */
+[hidden]{display:none!important}
+#view-auth{padding:30px 0 65px}
+.auth-shell{max-width:1080px;min-height:590px;margin:24px auto;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border:1px solid #29372e;border-radius:20px;background:#101713;box-shadow:0 30px 100px rgba(0,0,0,.45)}
+.auth-brand-panel{padding:clamp(30px,5vw,62px);display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 15% 12%,rgba(30,215,96,.22),transparent 40%),linear-gradient(145deg,#13251a,#0d1510 70%);position:relative;overflow:hidden}
+.auth-brand-panel:after{content:"♫";position:absolute;right:-30px;bottom:-90px;font-size:330px;line-height:1;color:rgba(30,215,96,.055);transform:rotate(-14deg);pointer-events:none}
+.auth-brand-mark{width:54px;height:54px;border-radius:17px;background:#1ed760;color:#06210f;display:grid;place-items:center;font-size:30px;margin-bottom:36px;box-shadow:0 0 36px #1ed76044}
+.auth-brand-panel h1{font-size:clamp(43px,5vw,68px);line-height:.98;letter-spacing:-.06em;margin:16px 0}
+.auth-brand-panel h1 em{font-style:normal;color:#1ed760}
+.auth-brand-panel>p{max-width:390px;color:#b8c8bd;line-height:1.8}
+.auth-feature{display:flex;align-items:center;gap:13px;margin-top:22px;position:relative;z-index:1}
+.auth-feature>span{width:38px;height:38px;border-radius:12px;background:#1b3324;color:#1ed760;display:grid;place-items:center;font-size:20px}
+.auth-feature b,.auth-feature small{display:block}
+.auth-feature b{font-size:13px}.auth-feature small{font-size:11px;color:#93a49a;margin-top:2px}
+.auth-card{width:100%;max-width:none;margin:0;border:0;border-radius:0;padding:clamp(28px,4vw,54px);display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#121a15,#101612)}
+.auth-card h2{font-size:clamp(25px,3vw,34px);letter-spacing:-.04em;margin:9px 0}
+.auth-card .muted{line-height:1.7}
+.auth-card .notice{background:#17271d;border:1px solid #31563c;color:#d6f5df;margin:16px 0 20px}
+.auth-card .field{font-size:12px;font-weight:700;color:#dce8df;gap:8px}
+.auth-card .field input{height:49px;padding:0 14px;border-radius:9px;background:#202a23;border:1px solid #34463a}
+.auth-card .field input:focus{outline:2px solid #1ed760;border-color:#1ed760}
+.auth-actions{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:4px}
+.auth-actions #authSwitchText{font-size:12px;color:#94a49a;margin-left:4px}
+.auth-actions .btn{min-width:120px;min-height:46px}
+.text-link,.back-link{border:0;background:none;color:#1ed760;font-weight:750;padding:6px 0;cursor:pointer}
+.text-link:hover,.back-link:hover{text-decoration:underline}
+.auth-links{text-align:right;margin-top:-7px}
+#authFeedback{min-height:20px;margin:12px 0}
+#authFeedback.error{color:#ff9c9c}
+#authFeedback.success{color:#8be5a7}
+.back-link{align-self:flex-start;color:#b1beb5;font-size:12px}
+.auth-security{font-size:9px;letter-spacing:.15em;color:#617166;margin-top:28px}
+@media(max-width:760px){
+ #view-auth{padding:12px 0 40px}
+ .auth-shell{grid-template-columns:1fr;max-width:520px;margin:10px auto}
+ .auth-brand-panel{padding:27px 28px 23px}
+ .auth-brand-mark{width:42px;height:42px;font-size:23px;margin-bottom:18px}
+ .auth-brand-panel h1{font-size:39px;margin:10px 0}
+ .auth-brand-panel>p{font-size:13px;margin:0}
+ .auth-feature{display:none}
+ .auth-card{padding:28px}
+}
+
+
+/* ADMIN CONTENT STUDIO — clear upload steps, previews and feedback */
+.admin-intro{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:14px;padding:22px}
+.admin-intro h3{font-size:23px;margin:5px 0}
+.admin-intro p{margin:0}
+.upload-step{width:68px;height:68px;border-radius:18px;background:#1b3324;color:#1ed760;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:23px;font-weight:900;flex:none}
+.upload-step span{font-size:9px;letter-spacing:.18em}
+.upload-panel{padding:clamp(16px,2.5vw,28px)}
+.form-section-title{display:flex;align-items:center;gap:12px;border-bottom:1px solid #2b3930;padding:10px 0 13px;margin-top:7px}
+.form-section-title>span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#1ed760;color:#07140b;font-weight:900}
+.form-section-title b,.form-section-title small{display:block}
+.form-section-title small{font-size:11px;color:#9ead9f;margin-top:2px}
+.upload-field{min-height:145px;padding:17px!important;border:1px dashed #47634f!important;border-radius:12px;background:linear-gradient(145deg,#17251b,#141c17);cursor:pointer;justify-content:center;align-items:flex-start;transition:.2s}
+.upload-field:hover{border-color:#1ed760!important;background:#1b2b20}
+.upload-field input[type=file]{width:100%;font-size:12px;padding:8px;background:#202a23;border:1px solid #34463a;cursor:pointer}
+.upload-field small{font-size:11px;color:#9cad9f;font-weight:400}
+.upload-icon{width:38px;height:38px;border-radius:11px;background:#1ed760;color:#07140b;display:grid;place-items:center;font-size:22px;font-weight:900}
+.file-name{font-size:11px;color:#b8f5c9;overflow-wrap:anywhere}
+.media-preview{padding:12px;background:#0d130f;border:1px solid #2b3930;border-radius:12px}
+.media-preview audio,.media-preview video{width:100%;max-height:320px}
+.cover-preview img{max-width:150px;max-height:150px;object-fit:cover;border-radius:12px;border:1px solid #34463a}
+.upload-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.upload-actions .btn{min-height:44px}
+.upload-progress{padding:12px 14px;background:#17251b;border:1px solid #31563c;border-radius:10px}
+.upload-progress p{font-size:12px;color:#c5e8ce;margin:7px 0 0}
+.progress-track{height:5px;border-radius:9px;background:#2a3b2f;overflow:hidden}
+.progress-track span{display:block;height:100%;width:40%;background:#1ed760;border-radius:9px;animation:uploadPulse 1.2s ease-in-out infinite alternate}
+@keyframes uploadPulse{from{transform:translateX(-70%)}to{transform:translateX(170%)}}
+.upload-hint{font-size:11px;color:#9cad9f;margin:0}
+#songFeedback,#messageFeedback{flex:1;min-width:180px}
+@media(max-width:520px){.admin-intro{padding:16px}.upload-step{width:54px;height:54px}.upload-actions .btn{width:100%}}
+
+
+/* PUBLIC LISTENING + SINGLE ADMIN GATE */
+.admin-login-shell{max-width:980px;min-height:520px;margin:32px auto;display:grid;grid-template-columns:1fr 1fr;border:1px solid #2b3930;border-radius:18px;overflow:hidden;background:#101713;box-shadow:0 28px 90px #0008}
+.admin-login-art{padding:clamp(28px,5vw,58px);display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 18% 16%,rgba(30,215,96,.2),transparent 42%),linear-gradient(145deg,#14271b,#0c130f)}
+.admin-login-symbol{width:54px;height:54px;border-radius:17px;background:#1ed760;color:#06210f;display:grid;place-items:center;font-size:30px;margin-bottom:28px}
+.admin-login-art h1{font-size:clamp(42px,5vw,65px);line-height:.98;letter-spacing:-.06em;margin:14px 0}
+.admin-login-art h1 em{font-style:normal;color:#1ed760}
+.admin-login-art p{max-width:390px;color:#b6c7bb;line-height:1.8}
+.admin-login-card{border:0;border-radius:0;margin:0;padding:clamp(26px,4vw,48px);display:flex;flex-direction:column;justify-content:center;background:#121a15}
+.admin-login-card h2{font-size:30px;margin:8px 0}
+.admin-login-card .notice{background:#18271d;border-color:#31563c;color:#d6f5df}
+.admin-login-card .field input{height:49px;background:#202a23;border:1px solid #34463a;border-radius:9px;padding:0 14px;color:#fff}
+.admin-login-card .field input:focus{outline:2px solid #1ed760}
+.admin-login-card #authSubmit{width:100%;min-height:48px}
+.admin-login-card #authFeedback{min-height:22px;margin:12px 0}
+.admin-login-card #authFeedback.error{color:#ff9c9c}
+.admin-login-card #authFeedback.success{color:#8be5a7}
+.admin-login-card .back-link{align-self:flex-start}
+@media(max-width:720px){.admin-login-shell{grid-template-columns:1fr;margin:10px auto}.admin-login-art{padding:25px 27px}.admin-login-symbol{width:42px;height:42px;margin-bottom:16px}.admin-login-art h1{font-size:40px;margin:8px 0}.admin-login-art p{font-size:13px;margin:0}.admin-login-card{padding:26px}}
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="#" onclick="showView('home');return false"><span class="mark">✦</span><span>INTEGRITY MINISTRIES<br>MUSIC HUB</span></a>
+<nav class="nav" id="nav"><button class="active" data-view="home">Home</button><button data-view="library">Music Library</button><button data-view="messages">Worship Messages</button><button data-view="admin" class="hidden">Admin Portal</button></nav>
+<div class="actions"><input class="search" id="globalSearch" placeholder="What do you want to listen to?" aria-label="Search songs"><button class="btn secondary" id="authBtn">Admin Login</button><button class="btn hamb" id="hamb" aria-label="Open menu">☰</button></div>
+</div></header>
+<main class="wrap">
+<section class="view active" id="view-home">
+<div class="hero"><div><span class="eyebrow">A place for worship</span><h1>Let every moment become worship.</h1><p>Discover uplifting songs, worship videos and heartfelt messages. No listener account is needed.</p><div class="row"><button class="btn primary" onclick="showView('library')">Explore music</button><button class="btn" onclick="showView('messages')">Worship messages</button></div></div><div class="hero-art" aria-label="Decorative music symbol"><span class="hero-note">♫</span><span class="hero-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div></div>
+<div class="section-head"><div><span class="eyebrow">Listen and be renewed</span><h2>Made for worship</h2></div><button class="ghost" onclick="showView('library')">View library →</button></div>
+<div class="grid" id="homeSongs"></div>
+<div class="section-head"><div><span class="eyebrow">Grow in faith</span><h2>Worship messages</h2></div></div><div class="grid" id="homeMessages"></div>
+</section>
+<section class="view" id="view-library"><div class="section-head"><div><span class="eyebrow">Your music space</span><h2>Explore all music</h2><p class="muted">Browse songs shared by Integrity Ministries.</p></div></div><div class="filters"><input id="songSearch" placeholder="Search title or artist"><select id="languageFilter"><option value="">All languages</option><option>Telugu</option><option>English</option><option>Other</option></select><select id="categoryFilter"><option value="">All categories</option><option>Worship</option><option>Praise</option><option>Gospel</option></select></div><div class="grid" id="librarySongs"></div></section>
+<section class="view" id="view-messages"><div class="section-head"><div><span class="eyebrow">Watch and reflect</span><h2>Worship Messages</h2><p class="muted">Sermons, prayer and Bible study.</p></div></div><div class="grid" id="messageGrid"></div></section>
+
+<section class="view" id="view-admin"><div class="section-head"><div><span class="eyebrow">Authorized workspace</span><h2>Admin Control Centre</h2></div><button class="btn" id="adminLogout">Sign out</button></div><div id="adminGate" class="panel">Checking admin access…</div>
+<div id="adminApp" class="admin-layout hidden"><nav class="side"><button class="btn active" data-admin="overview">Overview</button><button class="btn" data-admin="songs">Manage songs</button><button class="btn" data-admin="messages">Worship messages</button></nav><div>
+<section class="admin-pane active" id="pane-overview"><div class="stats" id="adminStats"></div><p class="muted">Live counts from your Supabase database.</p></section>
+<section class="admin-pane" id="pane-songs">
+<div class="admin-intro panel"><div><span class="eyebrow">CONTENT STUDIO</span><h3>Upload a new song</h3><p class="muted">Add the song details, choose the audio, attach the lyrics and publish when you're ready.</p></div><div class="upload-step">01 <span>SONG</span></div></div>
+<div class="panel upload-panel">
+<form id="songForm" class="formgrid">
+<input type="hidden" id="songId">
+<div class="form-section-title wide"><span>1</span><div><b>Song information</b><small>Title, artist and language</small></div></div>
+<label class="field">Song title *<input id="title" required maxlength="120" placeholder="e.g. Yesu Naa Kapari"></label>
+<label class="field">Artist / Worship leader *<input id="artist" required maxlength="120" placeholder="Artist name"></label>
+<label class="field">Album (optional)<input id="album" maxlength="120" placeholder="Album name"></label>
+<label class="field">Language<select id="language"><option>Telugu</option><option>English</option><option>Other</option></select></label>
+<label class="field">Category<select id="category"><option>Worship</option><option>Praise</option><option>Gospel</option></select></label>
+<label class="field">Visibility<select id="status"><option value="published">Publish now</option><option value="draft">Save as draft</option></select></label>
+<div class="form-section-title wide"><span>2</span><div><b>Song audio & artwork</b><small>Choose your audio file and optional cover</small></div></div>
+<label class="field upload-field wide" for="audioFile"><span class="upload-icon">♫</span><b>Choose song audio *</b><small>MP3, WAV, M4A and other browser-supported audio files</small><input id="audioFile" type="file" accept="audio/*"><span class="file-name" id="audioFileName">No audio selected</span></label>
+<div class="wide media-preview" id="audioPreviewWrap" hidden><audio id="audioPreview" controls></audio></div>
+<label class="field upload-field" for="coverFile"><span class="upload-icon">▧</span><b>Album cover (optional)</b><small>Square JPG, PNG or WebP image</small><input id="coverFile" type="file" accept="image/*"><span class="file-name" id="coverFileName">No cover selected</span></label>
+<div class="cover-preview" id="coverPreviewWrap" hidden><img id="coverPreview" alt="Selected cover preview"></div>
+<div class="form-section-title wide"><span>3</span><div><b>Lyrics</b><small>Paste lyrics or upload a .txt / .lrc file</small></div></div>
+<label class="field wide">Upload lyrics file (optional)<input id="lyricsFile" type="file" accept=".txt,.lrc,text/plain"></label>
+<label class="field wide">Lyrics<textarea id="lyrics" rows="7" placeholder="Paste lyrics here. Keep each line on a new row. You can include timestamps for synced lyrics later."></textarea></label>
+<div class="wide upload-actions"><button class="btn primary" id="songSubmit" type="submit">Upload & save song</button><button class="btn" type="reset" id="songClear">Clear form</button><span class="muted small" id="songFeedback" role="status" aria-live="polite"></span></div>
+<div class="wide upload-progress" id="songProgress" hidden><div class="progress-track"><span></span></div><p id="songProgressText">Preparing upload…</p></div>
+</form></div>
+<div class="section-head"><div><span class="eyebrow">YOUR CONTENT</span><h3>Existing songs</h3></div><span class="muted small" id="songCount"></span></div><div class="list" id="adminSongs"></div>
+</section>
+<section class="admin-pane" id="pane-messages">
+<div class="admin-intro panel"><div><span class="eyebrow">VIDEO STUDIO</span><h3>Upload a worship video</h3><p class="muted">Add sermons, worship sessions, prayer meetings or Bible study videos.</p></div><div class="upload-step">02 <span>VIDEO</span></div></div>
+<div class="panel upload-panel"><form id="messageForm" class="formgrid">
+<div class="form-section-title wide"><span>1</span><div><b>Video details</b><small>Tell listeners what this message is about</small></div></div>
+<label class="field">Video title *<input id="messageTitle" required maxlength="160" placeholder="e.g. Sunday Worship Service"></label>
+<label class="field">Speaker / Minister *<input id="speaker" required maxlength="120" placeholder="Speaker name"></label>
+<label class="field">Category<select id="messageCategory"><option>Worship</option><option>Prayer</option><option>Bible Study</option></select></label>
+<label class="field">Visibility<select id="messageStatus"><option value="published">Publish now</option><option value="draft">Save as draft</option></select></label>
+<div class="form-section-title wide"><span>2</span><div><b>Select video file</b><small>MP4 recommended for best browser compatibility</small></div></div>
+<label class="field upload-field wide" for="videoFile"><span class="upload-icon">▶</span><b>Choose worship video *</b><small>MP4, WebM or browser-supported video format</small><input id="videoFile" type="file" accept="video/*" required><span class="file-name" id="videoFileName">No video selected</span></label>
+<div class="wide media-preview" id="videoPreviewWrap" hidden><video id="videoPreview" controls playsinline></video></div>
+<label class="field upload-field" for="thumbnailFile"><span class="upload-icon">▧</span><b>Video thumbnail (optional)</b><small>Choose a cover image for the video</small><input id="thumbnailFile" type="file" accept="image/*"><span class="file-name" id="thumbnailFileName">No thumbnail selected</span></label>
+<div class="cover-preview" id="thumbnailPreviewWrap" hidden><img id="thumbnailPreview" alt="Selected thumbnail preview"></div>
+<label class="field wide">Description<textarea id="description" rows="4" placeholder="Add a short description, Bible passage or key message…"></textarea></label>
+<div class="wide upload-actions"><button class="btn primary" id="messageSubmit" type="submit">Upload & publish video</button><button class="btn" type="reset">Clear form</button><span id="messageFeedback" class="muted small" role="status" aria-live="polite"></span></div>
+<div class="wide upload-progress" id="messageProgress" hidden><div class="progress-track"><span></span></div><p id="messageProgressText">Preparing upload…</p></div>
+<p class="wide upload-hint">Tip: Large video files may take time to upload. Keep this page open until the upload is complete. Your Supabase Storage bucket must allow the file size you are uploading.</p>
+</form></div>
+<div class="section-head"><div><span class="eyebrow">YOUR CONTENT</span><h3>Existing worship videos</h3></div><span class="muted small" id="messageCount"></span></div><div class="list" id="adminMessages"></div>
+</section>
+
+</div></div>
+</section>
+<section class="view" id="view-auth">
+<div class="admin-login-shell">
+ <div class="admin-login-art"><div class="admin-login-symbol">✦</div><span class="eyebrow">INTEGRITY MINISTRIES</span><h1>Admin<br><em>Access</em></h1><p>This secure area is reserved for the authorized ministry administrator. Everyone can browse, watch and listen without an account.</p></div>
+ <div class="panel admin-login-card">
+  <span class="eyebrow">RESTRICTED AREA</span>
+  <h2>Administrator login</h2>
+  <p class="muted">Enter the authorized admin email and password to manage songs, lyrics and worship videos.</p>
+  <div class="notice small" id="connectionNotice">Admin sign-in requires your connected Supabase project. Public listeners do not need an account.</div>
+  <form id="authForm" class="formgrid">
+   <label class="field wide">Admin email<input id="email" type="email" required autocomplete="username" placeholder="admin@example.com"></label>
+   <label class="field wide">Password<input id="password" type="password" required autocomplete="current-password" placeholder="Enter admin password"></label>
+   <div class="wide"><button class="btn primary" id="authSubmit" type="submit">Unlock Admin Portal</button></div>
+  </form>
+  <p id="authFeedback" class="muted small" role="status" aria-live="polite"></p>
+  <button class="back-link" onclick="showView('home')">← Back to public music</button>
+  <p class="auth-security">SUPABASE SECURE AUTHENTICATION · ADMIN ONLY</p>
+ </div>
+</div>
+</section>
+</main>
+<footer class="wrap footer">© <span id="year"></span> Integrity Ministries Music Hub · Listen, worship and grow.</footer>
+<div class="player"><div class="player-inner"><div class="now"><div class="mini">♫</div><div><strong id="nowTitle">Choose a song</strong><span id="nowArtist">Integrity Ministries</span></div></div><div class="transport"><div><button id="prev">⏮</button><button class="play" id="play">▶</button><button id="next">⏭</button></div><div class="timeline"><span id="elapsed">0:00</span><input id="seek" type="range" min="0" max="100" value="0"><span id="duration">0:00</span></div></div><div class="volume"><span>VOL</span><input id="volume" type="range" min="0" max="100" value="75"></div></div></div>
+<audio id="audio" preload="metadata"></audio>
+<script>
+/* SUPABASE CONNECTION
+   Supabase Dashboard → Project Settings → API:
+   Paste the Project URL and public anon/publishable key below.
+   NEVER put the service_role/secret key or a user's password in this file. */
+const SUPABASE_URL = "https://qcvnngthlxoizhbrdpgd.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_5TycVUbJ65m4C5QE_frXZw_WU1hxCrs";
+const configured = SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("YOUR_") && SUPABASE_ANON_KEY.length > 30 && !SUPABASE_ANON_KEY.includes("YOUR_");
+const db = configured && window.supabase ? window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY) : null;
+const $ = id => document.getElementById(id);
+let session=null, profile=null, songs=[], messages=[], favourites=new Set(), currentIndex=-1, authMode="login";
+const audio=$("audio");
+const esc = value => String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const toast = message => {const el=document.createElement("div");el.className="toast";el.textContent=message;document.body.append(el);setTimeout(()=>el.remove(),3200)};
+const fmt = seconds => {if(!Number.isFinite(seconds))return "0:00";const m=Math.floor(seconds/60),s=Math.floor(seconds%60);return m+":"+String(s).padStart(2,"0")};
+function showView(name){
+ if(name==="admin"&&(!session||!["content_admin","super_admin"].includes(profile?.role))){showView("auth");return}
+ document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+name));
+ document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===name));
+ $("nav").classList.remove("open");
+ if(name==="admin")checkAdmin();
+}
+function cardSong(s){return `<article class="card"><div class="cover">${s.cover_url?`<img src="${esc(s.cover_url)}" alt="">`:"♫"}</div><h3>${esc(s.title)}</h3><p>${esc(s.artist)} · ${esc(s.language||"")}</p><div class="row"><button class="btn primary" data-play="${s.id}">▶ Play</button><button class="btn" data-lyrics="${s.id}">Lyrics</button></div></article>`}
+function cardMessage(m){return `<article class="card"><div class="cover">${m.thumbnail_url?`<img src="${esc(m.thumbnail_url)}" alt="">`:"✦"}</div><h3>${esc(m.title)}</h3><p>${esc(m.speaker)} · ${esc(m.category||"Worship")}</p>${m.video_url?`<a class="btn primary" href="${esc(m.video_url)}" target="_blank" rel="noopener">▶ Watch message</a>`:"<span class='muted small'>Video unavailable</span>"}</article>`}
+function render(){const pub=songs.filter(s=>s.status==="published");$("homeSongs").innerHTML=pub.slice(0,4).map(cardSong).join("")||'<p class="muted">No songs published yet. Check back soon for new worship music.</p>';$("librarySongs").innerHTML=pub.filter(s=>(!$("songSearch").value||(`${s.title} ${s.artist}`).toLowerCase().includes($("songSearch").value.toLowerCase()))&&(!$("languageFilter").value||s.language===$("languageFilter").value)&&(!$("categoryFilter").value||s.category===$("categoryFilter").value)).map(cardSong).join("")||'<p class="muted">No matching songs found.</p>';$("homeMessages").innerHTML=messages.filter(m=>m.status==="published").slice(0,3).map(cardMessage).join("")||'<p class="muted">No worship videos published yet.</p>';$("messageGrid").innerHTML=messages.filter(m=>m.status==="published").map(cardMessage).join("")||'<p class="muted">No worship videos published yet.</p>'}
+async function loadPublic(){if(!db){render();return}try{const [a,b]=await Promise.all([db.from("songs").select("*").eq("status","published").order("created_at",{ascending:false}),db.from("worship_messages").select("*").eq("status","published").order("created_at",{ascending:false})]);if(a.error)throw a.error;if(b.error)throw b.error;songs=a.data||[];messages=b.data||[];render()}catch(e){console.error(e);toast("Could not load published content. Check Supabase setup and policies.")}}
+function setAuthUI(){
+ const isAdmin=!!session&&["content_admin","super_admin"].includes(profile?.role);
+ $("authBtn").textContent=isAdmin?"Admin Portal": "Admin Login";
+ $("authBtn").title=isAdmin?"Open the administrator workspace":"Administrator access only";
+ const adminLink=document.querySelector('[data-view="admin"]');
+ if(adminLink)adminLink.classList.toggle("hidden",!isAdmin);
+}
+async function syncSession(){
+ if(!db){session=null;profile=null;setAuthUI();return}
+ const {data}=await db.auth.getSession();session=data.session;profile=null;
+ if(session){
+  const {data:p,error}=await db.from("profiles").select("*").eq("id",session.user.id).maybeSingle();
+  if(!error)profile=p||null;
+ }
+ setAuthUI();
+}
+async function checkAdmin(){
+ $("adminApp").classList.add("hidden");$("adminGate").classList.remove("hidden");
+ if(!db){$("adminGate").textContent="Supabase is not connected. Configure the project URL and public key first.";return}
+ await syncSession();
+ if(!session){$("adminGate").textContent="Admin login required. Use the Admin Login button.";return}
+ if(!["content_admin","super_admin"].includes(profile?.role)){
+  await db.auth.signOut();session=null;profile=null;setAuthUI();
+  $("adminGate").textContent="Access denied. This email is not assigned an administrator role.";
+  return;
+ }
+ $("adminGate").classList.add("hidden");$("adminApp").classList.remove("hidden");
+ await loadAdminData();
+}
+async function loadAdminData(){
+ const [a,b]=await Promise.all([
+  db.from("songs").select("*").order("created_at",{ascending:false}),
+  db.from("worship_messages").select("*").order("created_at",{ascending:false})
+ ]);
+ if(a.error||b.error){toast("Unable to load admin data: "+(a.error?.message||b.error?.message||"Unknown error"));return}
+ songs=a.data||[];messages=b.data||[];
+ $("adminStats").innerHTML=`<div class="stat">Songs<strong>${songs.length}</strong></div><div class="stat">Worship videos<strong>${messages.length}</strong></div>`;
+ $("songCount").textContent=`${songs.length} songs`;
+ $("messageCount").textContent=`${messages.length} videos`;
+ $("adminSongs").innerHTML=songs.map(s=>`<div class="listrow"><span><b>${esc(s.title)}</b><br><small class="muted">${esc(s.artist)} · ${esc(s.status)}</small></span><span class="row"><button class="btn" data-edit-song="${s.id}">Edit</button><button class="btn" data-delete-song="${s.id}">Delete</button></span></div>`).join("")||"No songs yet.";
+ $("adminMessages").innerHTML=messages.map(m=>`<div class="listrow"><span><b>${esc(m.title)}</b><br><small class="muted">${esc(m.speaker)} · ${esc(m.status)}</small></span><button class="btn" data-delete-message="${m.id}">Delete</button></div>`).join("")||"No worship videos yet.";
+}
+async function playSong(id){const index=songs.findIndex(s=>s.id===id);if(index<0)return;currentIndex=index;const s=songs[index];if(!s.audio_url){toast("This song has no audio file yet.");return}audio.src=s.audio_url;audio.play().then(()=>$("play").textContent="Ⅱ").catch(()=>toast("Playback could not start. Check the audio file URL."));$("nowTitle").textContent=s.title;$("nowArtist").textContent=s.artist}
+async function uploadFile(file,bucket,folder){
+ if(!file)return null;
+ if(!db)throw new Error("Supabase is not configured.");
+ if(file.size===0)throw new Error("The selected file is empty.");
+ const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
+ const path=`${folder}/${crypto.randomUUID()}-${safe}`;
+ const {error}=await db.storage.from(bucket).upload(path,file,{upsert:false,contentType:file.type||"application/octet-stream"});
+ if(error){
+  if(/size|payload|too large|limit/i.test(error.message||""))throw new Error("This file is larger than the current Supabase Storage limit. Increase the bucket's file size limit or choose a smaller/compressed file.");
+  throw new Error(`Upload failed: ${error.message}`);
+ }
+ const {data}=db.storage.from(bucket).getPublicUrl(path);
+ return data.publicUrl;
+}
+$("authBtn").onclick=()=>{
+ if(session&&["content_admin","super_admin"].includes(profile?.role)){showView("admin");return}
+ $("authFeedback").textContent="";$("authFeedback").className="muted small";showView("auth");
+};
+$("authForm").onsubmit=async e=>{
+ e.preventDefault();
+ const feedback=$("authFeedback"),btn=$("authSubmit");
+ if(!db){feedback.textContent="Supabase is not connected. Add your Project URL and public anon/publishable key.";feedback.className="small error";return}
+ const email=$("email").value.trim(),password=$("password").value;
+ btn.disabled=true;feedback.textContent="Checking administrator credentials…";feedback.className="muted small";
+ try{
+  const {error}=await db.auth.signInWithPassword({email,password});
+  if(error)throw error;
+  await syncSession();
+  if(!session||!["content_admin","super_admin"].includes(profile?.role)){
+   await db.auth.signOut();session=null;profile=null;setAuthUI();
+   throw new Error("Access denied. This account is not an authorized administrator.");
+  }
+  feedback.textContent="Admin access unlocked.";
+  feedback.className="small success";
+  setTimeout(()=>showView("admin"),300);
+ }catch(err){feedback.textContent=err.message;feedback.className="small error"}
+ finally{btn.disabled=false}
+};
+function setUploadStage(kind,message,show=true){
+ const wrap=$(kind+"Progress"),label=$(kind+"ProgressText");
+ if(wrap)wrap.hidden=!show;
+ if(label)label.textContent=message;
+}
+function setFileLabel(inputId,labelId){
+ const input=$(inputId),label=$(labelId);
+ if(input&&label)label.textContent=input.files?.[0]?`${input.files[0].name} · ${(input.files[0].size/1024/1024).toFixed(1)} MB`:"No file selected";
+}
+function previewLocalFile(inputId,wrapId,mediaId,labelId){
+ const input=$(inputId),wrap=$(wrapId),media=$(mediaId);
+ if(!input||!wrap||!media)return;
+ const file=input.files?.[0];
+ if(!file){wrap.hidden=true;media.removeAttribute("src");return}
+ const old=media.dataset.objectUrl;if(old)URL.revokeObjectURL(old);
+ const url=URL.createObjectURL(file);media.dataset.objectUrl=url;media.src=url;wrap.hidden=false;
+ if(labelId)setFileLabel(inputId,labelId);
+}
+["audioFile","coverFile","videoFile","thumbnailFile"].forEach(id=>{
+ const el=$(id);if(el)el.addEventListener("change",()=>{
+  const map={
+   audioFile:["audioPreviewWrap","audioPreview","audioFileName"],
+   coverFile:["coverPreviewWrap","coverPreview","coverFileName"],
+   videoFile:["videoPreviewWrap","videoPreview","videoFileName"],
+   thumbnailFile:["thumbnailPreviewWrap","thumbnailPreview","thumbnailFileName"]
+  };
+  const [wrap,media,label]=map[id];previewLocalFile(id,wrap,media,label);
+ });
+});
+$("lyricsFile").addEventListener("change",async()=>{
+ const file=$("lyricsFile").files?.[0];if(!file)return;
+ try{$("lyrics").value=await file.text();$("songFeedback").textContent=`Lyrics loaded from ${file.name}. Review them before saving.`}
+ catch(err){$("songFeedback").textContent="Could not read the lyrics file: "+err.message}
+});
+$("songForm").onsubmit=async e=>{
+ e.preventDefault();
+ const feedback=$("songFeedback"),btn=$("songSubmit");
+ if(!db){feedback.textContent="Connect Supabase before uploading.";feedback.className="small error";return}
+ const existingId=$("songId").value;
+ if(!existingId&&!$("audioFile").files?.[0]){feedback.textContent="Please choose an audio file.";feedback.className="small error";return}
+ btn.disabled=true;feedback.className="muted small";feedback.textContent="Starting song upload…";
+ try{
+  let audioUrl=null,coverUrl=null;
+  if($("audioFile").files?.[0]){setUploadStage("song","Uploading audio file…");audioUrl=await uploadFile($("audioFile").files[0],"music-audio","songs")}
+  if($("coverFile").files?.[0]){setUploadStage("song","Uploading album cover…");coverUrl=await uploadFile($("coverFile").files[0],"music-covers","covers")}
+  setUploadStage("song","Saving song details and lyrics…");
+  const payload={title:$("title").value.trim(),artist:$("artist").value.trim(),album:$("album").value.trim(),language:$("language").value,category:$("category").value,status:$("status").value,lyrics:$("lyrics").value.trim(),...(audioUrl?{audio_url:audioUrl}:{}),...(coverUrl?{cover_url:coverUrl}:{})};
+  if(!payload.audio_url&&!existingId)throw new Error("Choose an audio file for this new song.");
+  const result=existingId?await db.from("songs").update(payload).eq("id",existingId):await db.from("songs").insert(payload);
+  if(result.error)throw result.error;
+  feedback.textContent=existingId?"Song updated successfully.":"Song uploaded and saved successfully.";
+  feedback.className="small success";
+  e.target.reset();$("songId").value="";
+  ["audioPreviewWrap","coverPreviewWrap"].forEach(id=>$(id).hidden=true);
+  ["audioFileName","coverFileName"].forEach(id=>$(id).textContent="No file selected");
+  await loadAdminData();await loadPublic();
+ }catch(err){feedback.textContent=err.message;feedback.className="small error"}
+ finally{btn.disabled=false;setUploadStage("song","",false)}
+};
+$("songForm").addEventListener("reset",()=>{
+ setTimeout(()=>{
+  $("songId").value="";
+  ["audioPreviewWrap","coverPreviewWrap"].forEach(id=>$(id).hidden=true);
+  ["audioFileName","coverFileName"].forEach(id=>$(id).textContent="No file selected");
+  $("songFeedback").textContent="";
+ },0);
+});
+$("messageForm").onsubmit=async e=>{
+ e.preventDefault();
+ const feedback=$("messageFeedback"),btn=$("messageSubmit");
+ if(!db){feedback.textContent="Connect Supabase before uploading.";feedback.className="small error";return}
+ if(!$("videoFile").files?.[0]){feedback.textContent="Please choose a worship video.";feedback.className="small error";return}
+ btn.disabled=true;feedback.className="muted small";feedback.textContent="Starting video upload…";
+ try{
+  setUploadStage("message","Uploading worship video…");
+  const video=await uploadFile($("videoFile").files[0],"worship-videos","messages");
+  let thumb=null;
+  if($("thumbnailFile").files?.[0]){setUploadStage("message","Uploading thumbnail…");thumb=await uploadFile($("thumbnailFile").files[0],"music-covers","message-covers")}
+  setUploadStage("message","Saving worship video details…");
+  const {error}=await db.from("worship_messages").insert({title:$("messageTitle").value.trim(),speaker:$("speaker").value.trim(),category:$("messageCategory").value,status:$("messageStatus").value,description:$("description").value.trim(),video_url:video,thumbnail_url:thumb});
+  if(error)throw error;
+  feedback.textContent="Worship video uploaded and saved successfully.";feedback.className="small success";
+  e.target.reset();["videoPreviewWrap","thumbnailPreviewWrap"].forEach(id=>$(id).hidden=true);
+  ["videoFileName","thumbnailFileName"].forEach(id=>$(id).textContent="No file selected");
+  await loadAdminData();await loadPublic();
+ }catch(err){feedback.textContent=err.message;feedback.className="small error"}
+ finally{btn.disabled=false;setUploadStage("message","",false)}
+};
+$("messageForm").addEventListener("reset",()=>{
+ setTimeout(()=>{
+  ["videoPreviewWrap","thumbnailPreviewWrap"].forEach(id=>$(id).hidden=true);
+  ["videoFileName","thumbnailFileName"].forEach(id=>$(id).textContent="No file selected");
+  $("messageFeedback").textContent="";
+ },0);
+});
+document.addEventListener("click",async e=>{const p=e.target.closest("[data-play]"),l=e.target.closest("[data-lyrics]"),del=e.target.closest("[data-delete-song],[data-delete-message]"),edit=e.target.closest("[data-edit-song]");if(p)playSong(p.dataset.play);if(l){const s=songs.find(x=>x.id===l.dataset.lyrics);alert(s?.lyrics||"Lyrics have not been added yet.")}if(del){if(!confirm("Delete this content permanently?"))return;const table=del.dataset.deleteSong?"songs":"worship_messages",id=del.dataset.deleteSong||del.dataset.deleteMessage;const {error}=await db.from(table).delete().eq("id",id);if(error)toast(error.message);else{toast("Content deleted.");await loadAdminData();await loadPublic()}}if(edit){const s=songs.find(x=>x.id===edit.dataset.editSong);if(s){$("songId").value=s.id;$("title").value=s.title;$("artist").value=s.artist;$("album").value=s.album||"";$("language").value=s.language||"Other";$("category").value=s.category||"Worship";$("status").value=s.status;$("lyrics").value=s.lyrics||"";toast("Edit details, then select a replacement audio file only if needed. Existing media stays attached.")}}});
+document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>showView(b.dataset.view));document.querySelectorAll("[data-admin]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-admin]").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll(".admin-pane").forEach(x=>x.classList.toggle("active",x.id==="pane-"+b.dataset.admin))});
+$("hamb").onclick=()=>$("nav").classList.toggle("open");$("globalSearch").oninput=()=>{$("songSearch").value=$("globalSearch").value;showView("library");render()};["songSearch","languageFilter","categoryFilter"].forEach(id=>$(id).addEventListener("input",render));$("play").onclick=()=>audio.paused?audio.play():audio.pause();$("prev").onclick=()=>{if(currentIndex>0)playSong(songs[currentIndex-1].id)};$("next").onclick=()=>{if(currentIndex>=0&&currentIndex<songs.length-1)playSong(songs[currentIndex+1].id)};$("volume").oninput=e=>audio.volume=e.target.value/100;audio.ontimeupdate=()=>{$("seek").value=audio.duration?audio.currentTime/audio.duration*100:0;$("elapsed").textContent=fmt(audio.currentTime);$("duration").textContent=fmt(audio.duration)};$("seek").oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/100};audio.onplay=()=>$("play").textContent="Ⅱ";audio.onpause=()=>$("play").textContent="▶";$("adminLogout").onclick=async()=>{if(db)await db.auth.signOut();session=null;profile=null;setAuthUI();showView("home");toast("Signed out successfully.")};
+$("year").textContent=new Date().getFullYear();
+(async()=>{
+ if(db){
+  await syncSession();
+  db.auth.onAuthStateChange(()=>{queueMicrotask(()=>syncSession())});
+  await loadPublic();
+ }else{
+  setAuthUI();render();
+  const notice=$("connectionNotice");
+  if(notice)notice.textContent="Admin login is not connected yet. Public pages can be viewed, but published songs and videos load after Supabase is configured.";
+ }
+})();
+</script>
+</body></html>
