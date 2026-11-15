@@ -94,7 +94,14 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}a{color
   <div class="lyrics-bottom"><div class="lyrics-actions"><button onclick="toast('Share link will be available after publishing.')">♧</button><button onclick="toast('Lyrics options')">⋮</button></div><div class="lyrics-progress"><span>1:01</span><input type="range" min="0" max="193" value="61" aria-label="Song progress"><span>3:13</span></div><button class="lyrics-play" onclick="togglePlay()" id="lyricsPlayButton">▶</button></div>
 </div></div>
 <div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+// Supabase public browser configuration. Never place a secret/service_role key here.
+const SUPABASE_URL = "https://qcvnngthlxoizhbrdpgd.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_5TycVUbJ65m4C5QE_frXZw_WU1hxCrs";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+window.integritySupabase = supabaseClient;
+
 const songs=[
  {title:"నీ కృప చాలును",artist:"Integrity Worship",type:"Song",emoji:"✝",color:"linear-gradient(135deg,#183b30,#a58b58)"},
  {title:"స్తుతి గీతాలు",artist:"Integrity Ministries",type:"Album",emoji:"♫",color:"linear-gradient(135deg,#1c3936,#6f9b83)"},
@@ -122,6 +129,8 @@ function renderSearch(){let q=document.getElementById('searchInput').value.toLow
 function filterLibrary(type,btn){document.querySelectorAll('.chips .chip').forEach(x=>x.classList.remove('active'));btn.classList.add('active');let items=songs.map((s,i)=>({...s,i})).filter(s=>type==='All'||s.type===type.slice(0,-1));document.getElementById('libraryList').innerHTML=items.map(s=>rowHTML(s,s.i)).join('')||'<p style="color:var(--muted)">No items yet.</p>'}
 function adminTab(tab,btn){document.querySelectorAll('.admin-menu button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');['overview','upload','song','liveadmin','admins'].forEach(t=>document.getElementById('admin-'+t).classList.toggle('hidden',t!==tab))}
 function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2600)}
+async function checkSupabaseConnection(){try{const {error}=await supabaseClient.auth.getSession();if(error)throw error;toast('Supabase client initialized. Database tables and authentication setup still need configuration.')}catch(e){console.error('Supabase check:',e);toast('Supabase connection check failed. Check project URL and publishable key.')}}
+
 function simulateUpload(){let f=document.getElementById('videoFile').files[0];if(!f){toast('Choose a video file first.');return}document.getElementById('uploadStatus').textContent=`Selected: ${f.name} · ${(f.size/1024/1024).toFixed(1)} MB. Preview only — backend upload is not connected.`;let p=0;let bar=document.getElementById('fakeProgress');bar.style.width='0';let timer=setInterval(()=>{p+=8;bar.style.width=p+'%';if(p>=100){clearInterval(timer);document.getElementById('uploadStatus').textContent='Preview complete. Real resumable upload will be enabled with Supabase Storage.'}},180)}
 renderHome();songUI();
 </script>
