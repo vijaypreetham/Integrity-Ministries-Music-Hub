@@ -72,11 +72,17 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}a{color
     </section>
     <section class="page" id="page-search"><h1 class="page-title">Search</h1><div class="searchbox">⌕ <input id="searchInput" placeholder="What would you like to listen to?" oninput="renderSearch()"></div><div class="section-head"><h2 id="searchHeading">Explore worship</h2></div><div class="cards" id="searchResults"></div></section>
     <section class="page" id="page-library"><h1 class="page-title">Your Library</h1><div class="chips"><button class="chip active" onclick="filterLibrary('All',this)">All</button><button class="chip" onclick="filterLibrary('Songs',this)">Songs</button><button class="chip" onclick="filterLibrary('Albums',this)">Albums</button><button class="chip" onclick="filterLibrary('Playlists',this)">Playlists</button></div><div class="library-list" id="libraryList"></div></section>
-    <section class="page" id="page-live"><h1 class="page-title">Integrity Live</h1><div class="live-banner"><div><span class="live-dot">LIVE WORSHIP</span><h2>Gather together in worship.</h2><p>Join prayer meetings, worship services and special ministry events wherever you are.</p><button class="primary" onclick="toast('No live meeting is currently active.')">Watch live</button></div><div class="live-symbol">✝</div></div><div class="section"><div class="section-head"><h2>Upcoming gatherings</h2></div><div class="notice">Live broadcasts will appear here when an authorized admin starts a meeting. Recordings will be added to Worship Videos after processing.</div></div><div class="section"><div class="section-head"><h2>Recent live recordings</h2><button class="see" onclick="showPage('videos')">VIEW ALL</button></div><div class="video-grid" id="liveArchive"></div></div><div class="section"><div class="section-head"><h2>Worship Videos</h2><button class="see" onclick="showPage('videos')">VIEW ALL</button></div><p style="color:var(--muted);margin:0 0 15px">Watch worship sessions, prayer gatherings and special ministry moments.</p><div class="video-grid" id="liveWorshipVideos"></div></div></section>
-    <section class="page" id="page-videos"><h1 class="page-title">Worship Videos</h1><p style="color:var(--muted)">Recorded worship, prayer meetings and ministry gatherings.</p><div class="video-grid" id="videoGrid"></div></section>
+    <section class="page" id="page-live">
+  <h1 class="page-title">Integrity Live</h1>
+  <div class="live-v2-hero"><div><span class="live-v2-kicker"><i></i> INTEGRITY MINISTRIES BROADCAST</span><h2>Worship together.<br><em>Wherever you are.</em></h2><p>Join our live worship, prayer meetings and ministry gatherings from any device.</p><div class="live-v2-actions"><a class="primary" href="#livePlayer" onclick="document.getElementById('livePlayer').scrollIntoView({behavior:'smooth'});return false">Watch the broadcast</a><span id="liveStatusText">Checking for a live broadcast…</span></div></div><div class="live-v2-art"><div class="live-v2-orbit">✝</div><span>ONE BODY · ONE FAITH · ONE WORSHIP</span></div></div>
+  <div class="live-v2-section" id="livePlayer"><div class="section-head"><h2>Now streaming</h2><span class="live-v2-badge" id="liveBadge">OFF AIR</span></div><div class="live-v2-player" id="livePlayerFrame"><div class="live-v2-empty"><div>▶</div><h3>No live service at the moment</h3><p>When Integrity Ministries goes live, the broadcast will appear here.</p></div></div><div class="live-v2-caption"><strong id="liveCurrentTitle">Integrity Ministries Live</strong><span id="liveCurrentDescription">Stay connected for upcoming worship and prayer gatherings.</span></div></div>
+  <div class="live-v2-section"><div class="section-head"><h2>Upcoming gatherings</h2></div><div class="live-v2-events" id="liveUpcoming"><article class="live-v2-event"><span class="event-icon">✧</span><div><strong>Sunday Worship</strong><p>Join us for worship and prayer. Schedule will be announced here.</p></div><small>COMING SOON</small></article></div></div>
+  <div class="live-v2-section"><div class="section-head"><h2>Recent broadcasts</h2><button class="see" onclick="showPage('videos')">VIEW VIDEOS</button></div><div class="video-grid" id="liveArchive"></div></div>
+</section>
+<section class="page" id="page-videos"><h1 class="page-title">Worship Videos</h1><p style="color:var(--muted)">Recorded worship, prayer meetings and ministry gatherings.</p><div class="video-grid" id="videoGrid"></div></section>
     <section class="page" id="page-messages"><h1 class="page-title">Worship Messages</h1><div class="notice">Encouraging messages and sermons will be published here by the ministry team.</div><div class="video-grid" style="margin-top:18px"><article class="video-tile"><div class="video-thumb">✝</div><div><strong>Daily encouragement</strong><p>Messages for faith and everyday life.</p></div></article><article class="video-tile"><div class="video-thumb">♫</div><div><strong>Worship reflections</strong><p>Thoughts to carry into your week.</p></div></article></div></section>
     <section class="page" id="page-profile"><h1 class="page-title">Your profile</h1><div class="admin-panel" style="max-width:600px"><div class="brand"><div class="profile" style="display:grid;place-items:center">IM</div><div><strong>Welcome, Listener</strong><div style="color:var(--muted);font-size:13px">Your Integrity Ministries account</div></div></div><hr style="border-color:var(--line);margin:20px 0"><button class="outline" onclick="toast('Authentication will be connected to Supabase.')">Sign in / Create account</button><p style="color:var(--muted);font-size:13px">Your favourites, playlists and listening history will be synced after account integration.</p></div></section>
-    <section class="page" id="page-admin"><h1 class="page-title">Admin Studio</h1><div class="notice" style="margin-bottom:18px">Preview mode: admin tools are visual prototypes. Secure admin authentication, uploads, live streaming and publishing will be connected to the backend in the integration phase.</div><div class="admin-layout"><div class="admin-menu"><button class="active" onclick="adminTab('overview',this)">Overview</button><button onclick="adminTab('upload',this)">Upload video</button><button onclick="adminTab('song',this)">Add song</button><button onclick="adminTab('liveadmin',this)">Start live</button><button onclick="adminTab('admins',this)">Manage admins</button></div><div class="admin-panel">
+    <section class="page" id="page-admin"><h1 class="page-title">Admin Studio</h1><div id="adminAccessGate" class="admin-access-gate"><div class="admin-access-icon">♙</div><h2>Administrator sign in</h2><p>This secure area is only for approved Integrity Ministries administrators. Sign in with your authorized email and password.</p><button class="primary green" onclick="openAuthModal('admin')">Admin email & password</button></div><div id="adminWorkspace" class="hidden"><div class="admin-layout"><div class="admin-menu"><button class="active" onclick="adminTab('overview',this)">Overview</button><button onclick="adminTab('upload',this)">Upload video</button><button onclick="adminTab('song',this)">Add song</button><button onclick="adminTab('liveadmin',this)">Start live</button><button onclick="adminTab('admins',this)">Manage admins</button></div><div class="admin-panel">
       <div id="admin-overview"><h3>Ministry dashboard</h3><div class="quick-grid"><div class="quick" style="padding:14px"><div><strong>350+</strong><br><small style="color:var(--muted)">Planned songs</small></div></div><div class="quick" style="padding:14px"><div><strong>Videos</strong><br><small style="color:var(--muted)">Library</small></div></div><div class="quick" style="padding:14px"><div><strong>Live</strong><br><small style="color:var(--muted)">Broadcast studio</small></div></div></div><p style="color:var(--muted);font-size:13px">Choose a tool from the admin menu to manage ministry content.</p></div>
       <div id="admin-upload" class="hidden"><h3>Upload worship video</h3><div class="field"><label>Video title</label><input placeholder="e.g. Sunday Prayer Meeting"></div><div class="form-grid"><div class="field"><label>Category</label><select><option>Prayer meeting</option><option>Sunday worship</option><option>Special service</option></select></div><div class="field"><label>Duration</label><select><option>Up to 1 hour</option><option>1–2 hours</option><option>More than 2 hours</option></select></div></div><div class="upload-box"><div style="font-size:32px">⇧</div><strong>Select a video file</strong><p>Long recordings will use resumable chunk uploads after backend integration.</p><input type="file" id="videoFile" accept="video/*" style="max-width:100%"></div><div class="progress"><span id="fakeProgress"></span></div><small id="uploadStatus" style="color:var(--muted)">No file selected</small><div style="margin-top:15px"><button class="primary green" onclick="simulateUpload()">Preview upload flow</button></div></div>
       <div id="admin-song" class="hidden"><h3>Add a worship song</h3><div class="form-grid"><div class="field"><label>Song title</label><input placeholder="Song title"></div><div class="field"><label>Singer / artist</label><input placeholder="Singer name"></div><div class="field"><label>Language</label><select><option>Telugu</option><option>English</option><option>Hindi</option><option>Other</option></select></div><div class="field"><label>Album</label><input placeholder="Album name"></div><div class="field wide"><label>Lyrics</label><textarea placeholder="Paste song lyrics here..."></textarea></div><div class="field wide"><label>Audio file</label><input type="file" accept="audio/*"></div></div><button class="primary green" onclick="toast('Song form preview. Database publishing will be connected later.')">Save song</button></div>
@@ -134,4 +140,144 @@ async function checkSupabaseConnection(){try{const {error}=await supabaseClient.
 function simulateUpload(){let f=document.getElementById('videoFile').files[0];if(!f){toast('Choose a video file first.');return}document.getElementById('uploadStatus').textContent=`Selected: ${f.name} · ${(f.size/1024/1024).toFixed(1)} MB. Preview only — backend upload is not connected.`;let p=0;let bar=document.getElementById('fakeProgress');bar.style.width='0';let timer=setInterval(()=>{p+=8;bar.style.width=p+'%';if(p>=100){clearInterval(timer);document.getElementById('uploadStatus').textContent='Preview complete. Real resumable upload will be enabled with Supabase Storage.'}},180)}
 renderHome();songUI();
 </script>
+
+<style>
+.live-v2-hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center;padding:clamp(24px,4vw,48px);border:1px solid rgba(213,190,137,.22);border-radius:26px;background:radial-gradient(circle at 85% 25%,rgba(194,160,91,.18),transparent 30%),linear-gradient(125deg,#18352b,#0d1915 72%);overflow:hidden}
+.live-v2-kicker{font-size:11px;letter-spacing:2px;color:#e4c98f;font-weight:800}.live-v2-kicker i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#d5b66f;margin-right:8px;box-shadow:0 0 12px #d5b66f}
+.live-v2-hero h2{font-size:clamp(30px,4vw,54px);line-height:1.08;margin:18px 0 12px}.live-v2-hero h2 em{font-style:normal;color:#dfc58f}.live-v2-hero p{color:#bdc9c1;max-width:560px;line-height:1.7}.live-v2-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:22px}.live-v2-actions>span{font-size:12px;color:#b9c5bd}.live-v2-art{min-height:200px;display:grid;place-items:center;position:relative;color:#d8c18e}.live-v2-orbit{width:170px;height:170px;border:1px solid rgba(220,195,139,.55);border-radius:50%;display:grid;place-items:center;font-size:86px;background:radial-gradient(circle,rgba(222,195,136,.18),transparent 68%);box-shadow:0 0 70px rgba(206,177,115,.12)}.live-v2-art span{font-size:9px;letter-spacing:2px;margin-top:-16px}.live-v2-section{margin-top:34px}.live-v2-badge{font-size:10px;letter-spacing:1.4px;font-weight:800;border:1px solid #65766b;border-radius:30px;padding:7px 12px;color:#aab8af}.live-v2-badge.is-live{color:#f2c2b7;border-color:#a94b40;background:rgba(169,75,64,.12)}.live-v2-player{aspect-ratio:16/9;max-height:590px;background:#050907;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;place-items:center}.live-v2-player iframe{width:100%;height:100%;border:0}.live-v2-empty{text-align:center;padding:30px}.live-v2-empty>div{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#d8c18e;color:#102019;margin:0 auto 16px;font-size:24px}.live-v2-empty h3{margin:0 0 8px}.live-v2-empty p,.live-v2-caption span{color:var(--muted);font-size:13px}.live-v2-caption{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:14px 4px}.live-v2-events{display:grid;gap:12px}.live-v2-event{display:flex;align-items:center;gap:16px;padding:18px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}.event-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(216,193,142,.13);color:#dfc58f;font-size:22px}.live-v2-event p{margin:5px 0 0;color:var(--muted);font-size:13px}.live-v2-event small{margin-left:auto;color:#d8c18e;font-size:10px;letter-spacing:1px}.admin-access-gate{max-width:540px;margin:36px auto;padding:38px;text-align:center;border:1px solid var(--line);border-radius:22px;background:var(--panel)}.admin-access-icon{font-size:32px;color:#d8c18e}.admin-access-gate h2{margin:12px 0}.admin-access-gate p{color:var(--muted);line-height:1.6}.role-pill{display:inline-block;padding:7px 12px;border-radius:20px;background:rgba(216,193,142,.15);color:#dfc58f;font-size:10px;letter-spacing:1px;font-weight:800}.auth-overlay{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);display:none;place-items:center;padding:18px}.auth-overlay.open{display:grid}.auth-card{width:min(100%,440px);padding:28px;border:1px solid rgba(220,195,139,.3);border-radius:22px;background:#102019;box-shadow:0 25px 90px #000}.auth-card h2{margin:0 0 8px}.auth-card p{color:#b9c5bd;font-size:13px;line-height:1.6}.auth-card label{display:block;margin:16px 0 7px;font-size:12px;color:#d7dfd9}.auth-card input{width:100%;padding:13px;border-radius:10px;border:1px solid #40554a;background:#08120e;color:white}.auth-card .auth-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}.auth-card .auth-error{color:#ffb6a9;min-height:18px;font-size:12px;margin-top:10px}.auth-close{float:right;background:transparent;color:white;border:0;font-size:24px;cursor:pointer}
+@media(max-width:760px){.live-v2-hero{grid-template-columns:1fr}.live-v2-art{min-height:130px}.live-v2-orbit{width:115px;height:115px;font-size:58px}.live-v2-art span{display:none}.live-v2-caption{display:grid}.admin-access-gate{padding:24px}}
+</style>
+
+<style>
+.live-v2-hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center;padding:clamp(24px,4vw,48px);border:1px solid rgba(213,190,137,.22);border-radius:26px;background:radial-gradient(circle at 85% 25%,rgba(194,160,91,.18),transparent 30%),linear-gradient(125deg,#18352b,#0d1915 72%);overflow:hidden}.live-v2-kicker{font-size:11px;letter-spacing:2px;color:#e4c98f;font-weight:800}.live-v2-kicker i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#d5b66f;margin-right:8px;box-shadow:0 0 12px #d5b66f}.live-v2-hero h2{font-size:clamp(30px,4vw,54px);line-height:1.08;margin:18px 0 12px}.live-v2-hero h2 em{font-style:normal;color:#dfc58f}.live-v2-hero p{color:#bdc9c1;max-width:560px;line-height:1.7}.live-v2-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:22px}.live-v2-actions>span{font-size:12px;color:#b9c5bd}.live-v2-art{min-height:200px;display:grid;place-items:center;position:relative;color:#d8c18e}.live-v2-orbit{width:170px;height:170px;border:1px solid rgba(220,195,139,.55);border-radius:50%;display:grid;place-items:center;font-size:86px;background:radial-gradient(circle,rgba(222,195,136,.18),transparent 68%);box-shadow:0 0 70px rgba(206,177,115,.12)}.live-v2-art span{font-size:9px;letter-spacing:2px;margin-top:-16px}.live-v2-section{margin-top:34px}.live-v2-badge{font-size:10px;letter-spacing:1.4px;font-weight:800;border:1px solid #65766b;border-radius:30px;padding:7px 12px;color:#aab8af}.live-v2-badge.is-live{color:#f2c2b7;border-color:#a94b40;background:rgba(169,75,64,.12)}.live-v2-player{aspect-ratio:16/9;max-height:590px;background:#050907;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;place-items:center}.live-v2-player iframe{width:100%;height:100%;border:0}.live-v2-empty{text-align:center;padding:30px}.live-v2-empty>div{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#d8c18e;color:#102019;margin:0 auto 16px;font-size:24px}.live-v2-empty h3{margin:0 0 8px}.live-v2-empty p,.live-v2-caption span{color:var(--muted);font-size:13px}.live-v2-caption{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:14px 4px}.live-v2-events{display:grid;gap:12px}.live-v2-event{display:flex;align-items:center;gap:16px;padding:18px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}.event-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(216,193,142,.13);color:#dfc58f;font-size:22px}.live-v2-event p{margin:5px 0 0;color:var(--muted);font-size:13px}.live-v2-event small{margin-left:auto;color:#d8c18e;font-size:10px;letter-spacing:1px}.admin-access-gate{max-width:540px;margin:36px auto;padding:38px;text-align:center;border:1px solid var(--line);border-radius:22px;background:var(--panel)}.admin-access-icon{font-size:32px;color:#d8c18e}.admin-access-gate h2{margin:12px 0}.admin-access-gate p{color:var(--muted);line-height:1.6}.auth-overlay{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);display:none;place-items:center;padding:18px}.auth-overlay.open{display:grid}.auth-card{width:min(100%,440px);padding:28px;border:1px solid rgba(220,195,139,.3);border-radius:22px;background:#102019;box-shadow:0 25px 90px #000}.auth-card h2{margin:0 0 8px}.auth-card p{color:#b9c5bd;font-size:13px;line-height:1.6}.auth-card label{display:block;margin:16px 0 7px;font-size:12px;color:#d7dfd9}.auth-card input{width:100%;padding:13px;border-radius:10px;border:1px solid #40554a;background:#08120e;color:white}.auth-card .auth-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}.auth-card .auth-error{color:#ffb6a9;min-height:18px;font-size:12px;margin-top:10px}.auth-close{float:right;background:transparent;color:white;border:0;font-size:24px;cursor:pointer}@media(max-width:760px){.live-v2-hero{grid-template-columns:1fr}.live-v2-art{min-height:130px}.live-v2-orbit{width:115px;height:115px;font-size:58px}.live-v2-art span{display:none}.live-v2-caption{display:grid}.admin-access-gate{padding:24px}}
+</style>
+
+<div class="auth-overlay" id="integrityAuthModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+ <div class="auth-card"><button class="auth-close" onclick="closeAuthModal()" aria-label="Close">×</button>
+  <h2 id="authTitle">Sign in</h2><p id="authIntro">Use your Integrity Ministries account.</p>
+  <label for="authEmail">Email address</label><input id="authEmail" type="email" autocomplete="username" placeholder="you@example.com">
+  <label for="authPassword">Password</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="Enter password">
+  <div class="auth-actions"><button class="primary green" id="authSubmit" onclick="submitIntegrityAuth()">Sign in</button><button class="outline" onclick="closeAuthModal()">Cancel</button></div>
+  <div class="auth-error" id="authError" aria-live="polite"></div>
+ </div>
+</div>
+<script>
+let integrityAuthMode = "admin";
+let integrityUser = null;
+let integrityRole = "listener";
+let integrityLiveRow = null;
+
+function openAuthModal(mode="admin"){
+  integrityAuthMode=mode;
+  document.getElementById("authTitle").textContent=mode==="admin"?"Administrator sign in":"Listener sign in";
+  document.getElementById("authIntro").textContent=mode==="admin"?"Only approved ministry administrators can access Admin Studio.":"Sign in to your Integrity Ministries account.";
+  document.getElementById("authError").textContent="";
+  document.getElementById("integrityAuthModal").classList.add("open");
+  setTimeout(()=>document.getElementById("authEmail").focus(),50);
+}
+function closeAuthModal(){document.getElementById("integrityAuthModal").classList.remove("open")}
+async function submitIntegrityAuth(){
+  const email=document.getElementById("authEmail").value.trim();
+  const password=document.getElementById("authPassword").value;
+  const errorBox=document.getElementById("authError");
+  const btn=document.getElementById("authSubmit");
+  errorBox.textContent="";
+  if(!email||!password){errorBox.textContent="Enter your email and password.";return}
+  btn.disabled=true;btn.textContent="Signing in…";
+  try{
+    const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+    if(error)throw error;
+    await refreshIntegrityAccount();
+    if(integrityAuthMode==="admin"&&!["super_admin","music_admin","video_admin","live_admin","content_admin"].includes(integrityRole)){
+      await supabaseClient.auth.signOut();
+      await refreshIntegrityAccount();
+      throw new Error("This account is not approved as an administrator. Ask the ministry Super Admin to grant your role.");
+    }
+    closeAuthModal();toast(integrityAuthMode==="admin"?"Administrator access granted.":"Signed in successfully.");
+    if(integrityAuthMode==="admin"){showPage("admin");}
+  }catch(e){errorBox.textContent=e.message||"Sign in failed."}
+  finally{btn.disabled=false;btn.textContent="Sign in"}
+}
+async function refreshIntegrityAccount(){
+  const {data:{session}}=await supabaseClient.auth.getSession();
+  integrityUser=session?.user||null;integrityRole="listener";
+  if(integrityUser){
+    const {data,error}=await supabaseClient.from("profiles").select("display_name,role").eq("id",integrityUser.id).maybeSingle();
+    if(error)console.warn("Profile lookup:",error.message);
+    if(data)integrityRole=data.role||"listener";
+  }
+  const admin=!!integrityUser&&["super_admin","music_admin","video_admin","live_admin","content_admin"].includes(integrityRole);
+  document.querySelectorAll('[data-page="admin"]').forEach(b=>b.style.display="");
+  document.getElementById("adminAccessGate").classList.toggle("hidden",admin);
+  document.getElementById("adminWorkspace").classList.toggle("hidden",!admin);
+  document.getElementById("accountSignedOut").classList.toggle("hidden",!!integrityUser);
+  document.getElementById("accountSignedIn").classList.toggle("hidden",!integrityUser);
+  document.getElementById("accountHeading").textContent=integrityUser?(integrityUser.user_metadata?.display_name||"Welcome back"):"Welcome to Integrity Ministries";
+  document.getElementById("accountSubheading").textContent=integrityUser?"Your Integrity Ministries account":"Sign in to sync your personal library.";
+  document.getElementById("accountEmail").textContent=integrityUser?.email||"";
+  document.getElementById("accountRolePill").textContent=integrityRole.replaceAll("_"," ").toUpperCase();
+  return admin;
+}
+async function signOutIntegrity(){await supabaseClient.auth.signOut();await refreshIntegrityAccount();showPage("home");toast("You have signed out.")}
+const originalShowPage=showPage;
+showPage=function(name){
+  if(name==="admin"){
+    const allowed=!!integrityUser&&["super_admin","music_admin","video_admin","live_admin","content_admin"].includes(integrityRole);
+    if(!allowed){originalShowPage("admin");openAuthModal("admin");return}
+  }
+  originalShowPage(name);
+};
+async function loadIntegrityLive(){
+  if(!document.getElementById("livePlayerFrame")) return;
+  const {data,error}=await supabaseClient.from("live_events").select("*").order("created_at",{ascending:false}).limit(10);
+  if(error){console.warn("Live events not configured:",error.message);document.getElementById("liveStatusText").textContent="Broadcast schedule will appear here.";return}
+  const active=(data||[]).find(x=>x.status==="live");
+  const newest=(data||[])[0];
+  const selected=active||newest;
+  const player=document.getElementById("livePlayerFrame");
+  const badge=document.getElementById("liveBadge");
+  if(selected){
+    document.getElementById("liveCurrentTitle").textContent=selected.title||"Integrity Ministries Live";
+    document.getElementById("liveCurrentDescription").textContent=selected.description||"";
+    if(selected.status==="live"&&selected.youtube_video_id){
+      player.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(selected.youtube_video_id)+'?autoplay=0&rel=0" title="Integrity Ministries Live" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+      badge.textContent="LIVE NOW";badge.classList.add("is-live");document.getElementById("liveStatusText").textContent="A broadcast is live now.";
+    }else if(selected.youtube_video_id){
+      player.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(selected.youtube_video_id)+'?rel=0" title="Integrity Ministries replay" allowfullscreen></iframe>';
+      badge.textContent=selected.status==="upcoming"?"UPCOMING":"REPLAY";badge.classList.remove("is-live");document.getElementById("liveStatusText").textContent=selected.status==="upcoming"?"Upcoming gathering details are available.":"Latest broadcast replay.";
+    }
+    document.getElementById("liveUpcoming").innerHTML=(data||[]).filter(x=>x.status==="upcoming").map(x=>'<article class="live-v2-event"><span class="event-icon">✧</span><div><strong>'+escapeLiveText(x.title)+'</strong><p>'+escapeLiveText(x.description||"")+'</p></div><small>UPCOMING</small></article>').join("")||'<article class="live-v2-event"><span class="event-icon">✧</span><div><strong>No upcoming gathering published</strong><p>Please check back for the next worship service.</p></div><small>STAY TUNED</small></article>';
+  }else{document.getElementById("liveStatusText").textContent="No broadcast is active right now."}
+}
+function escapeLiveText(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function parseYouTubeId(url){
+  try{const u=new URL(url);if(u.hostname==="youtu.be")return u.pathname.slice(1).split("/")[0];if(u.hostname.includes("youtube.com"))return u.searchParams.get("v")||u.pathname.split("/").filter(Boolean).pop()}catch(e){}return null
+}
+async function publishIntegrityLive(){
+  if(!integrityUser||!["super_admin","live_admin"].includes(integrityRole)){toast("Only the Super Admin or Live Admin can publish a broadcast.");return}
+  const title=document.getElementById("liveAdminTitle").value.trim();
+  const description=document.getElementById("liveAdminDescription").value.trim();
+  const url=document.getElementById("liveAdminUrl").value.trim();
+  const status=document.getElementById("liveAdminStatus").value;
+  const youtube_video_id=parseYouTubeId(url);
+  if(!title||!youtube_video_id){toast("Enter a title and a valid YouTube watch URL.");return}
+  const {error}=await supabaseClient.from("live_events").insert({title,description,youtube_video_id,status,created_by:integrityUser.id});
+  if(error){toast("Could not publish: "+error.message);return}
+  toast("Broadcast details published.");await loadIntegrityLive();
+}
+async function endIntegrityLive(){
+  if(!integrityUser||!["super_admin","live_admin"].includes(integrityRole)){toast("Only the Super Admin or Live Admin can end a broadcast.");return}
+  const {data,error}=await supabaseClient.from("live_events").select("id").eq("status","live").order("created_at",{ascending:false}).limit(1).maybeSingle();
+  if(error||!data){toast("No active website broadcast found.");return}
+  const result=await supabaseClient.from("live_events").update({status:"ended"}).eq("id",data.id);
+  if(result.error){toast("Could not update broadcast: "+result.error.message);return}
+  toast("Website broadcast marked as ended.");await loadIntegrityLive();
+}
+window.addEventListener("DOMContentLoaded",async()=>{
+  await refreshIntegrityAccount();
+  await loadIntegrityLive();
+  supabaseClient.auth.onAuthStateChange(()=>setTimeout(async()=>{await refreshIntegrityAccount();await loadIntegrityLive()},0));
+});
+</script>
+
 </body></html>
